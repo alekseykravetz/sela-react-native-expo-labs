@@ -27,7 +27,7 @@ export default class PhoneBook extends React.Component {
             <View style={styles.container}>
                 {this.state.data.map(item => {
                     return (
-                        <TouchableOpacity onPress={() => this._handleClick(item)}>
+                        <TouchableOpacity key={item.name + item.phone} onPress={() => this._handleClick(item)}>
                             <Text style={{ color: this.state.selected.name === item.name ? 'red' : 'green' }}>
                                 {item.name} - {item.phone}
                             </Text>
