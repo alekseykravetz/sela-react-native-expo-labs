@@ -1,51 +1,105 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
 
-import MyButton from './CounterButton';
-
-
-
-class Blink extends React.Component {
-
-  componentDidMount(){
-    // Toggle the state every second
-    setInterval(() => (
-      this.setState(previousState => (
-        { isShowingText: !previousState.isShowingText }
-      ))
-    ), 1000);
-  }
-
-  //state object
-  state = { isShowingText: true };
-
-  render() {
-    if (!this.state.isShowingText) {
-      return null;
-    }
-
-    return (
-      <Text>{this.props.text}</Text>
-    );
-  }
-}
-
-
+import MyButton from './labs/CounterButton';
+import Blink from './labs/Blink';
+import PhoneBook from './labs/PhoneBook';
+import SearchResults from './labs/SearchResults';
+import {FixedDimensionsBasics, FlexDimensionsBasics} from './labs/Layout';
+import ViewAndTextExample from './labs/ViewAndText';
+import TextInputAndButton from './labs/TextInputAndButton';
+import ImageAndTouchable from './labs/ImageAndTouchable';
 
 export default class MyApp extends React.Component {
-  render() {
-    return(
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <MyButton />
-        <Blink text='I love to blink' />
 
+  state = {
+    users: [
+      {
+        name: "Proxima Midnight",
+        email: "proxima@appdividend.com"
+      },
+      {
+        name: "Ebony Maw",
+        email: "ebony@appdividend.com"
+      },
+      {
+        name: "Black Dwarf",
+        email: "dwarf@appdividend.com"
+      },
+      {
+        name: "Mad Titan",
+        email: "thanos@appdividend.com"
+      },
+      {
+        name: "Supergiant",
+        email: "supergiant@appdividend.com"
+      },
+      {
+        name: "Loki",
+        email: "loki@appdividend.com"
+      },
+      {
+        name: "corvus",
+        email: "corvus@appdividend.com"
+      },
+      {
+        name: "Proxima Midnight",
+        email: "proxima1@appdividend.com"
+      },
+      {
+        name: "Ebony Maw",
+        email: "ebony1@appdividend.com"
+      },
+      {
+        name: "Black Dwarf",
+        email: "dwarf1@appdividend.com"
+      },
+      {
+        name: "Mad Titan",
+        email: "thanos1@appdividend.com"
+      },
+      {
+        name: "Supergiant",
+        email: "supergiant1@appdividend.com"
+      },
+      {
+        name: "Loki",
+        email: "loki1@appdividend.com"
+      },
+      {
+        name: "corvus",
+        email: "corvus1@appdividend.com"
+      }
+    ]
+  };
+
+  render() {
+    return (
+      <View style={styles.container}>
+
+
+        {/* <Text>Open up App.js to start working on your app!</Text> */}
+
+        {/* <ImageAndTouchable /> */}
+
+        {/* <MyButton /> */}
+        {/* <Blink text='I love to blink' /> */}
+        {/* <MyButton /> */}
+        {/* <Image source={require('./assets/icon.png')} /> */}
+        {/* <FlatList data={this.state.users}
+                  keyExtractor={(item, index) => `item: ${item} index: ${index}`}
+                  renderItem={({item}) => (<Text>List item: {item.name}</Text>)}
+                  /> */}
+        <PhoneBook />
+        <SearchResults data={this.state.users} />
       </View>
     );
   }
 }
 
 
-const styles = StyleSheet.create({ 
-  container: { flex: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center', },
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#fff', },
 });
+
+// alignItems: 'center', justifyContent: 'center',
