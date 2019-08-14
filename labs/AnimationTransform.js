@@ -3,8 +3,8 @@ import { Animated, StyleSheet, Image, Easing, View } from 'react-native';
 
 export default class AnimationTransform extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.spinValue = new Animated.Value(0);
         this.widthValue = new Animated.Value(227);
         this.colorValue = new Animated.Value(0);
@@ -19,7 +19,7 @@ export default class AnimationTransform extends Component {
     animateSpin() {
         this.spinValue.setValue(0);
         Animated.timing(this.spinValue, {
-            toValue: 1,
+            toValue: 360,
             duration: 4000,
             easing: Easing.linear
         }).start(() => this.animateSpin());
@@ -51,15 +51,8 @@ export default class AnimationTransform extends Component {
     }
 
     render() {
-        const spin = this.spinValue.interpolate({
-            inputRange: [0, 1],
-            outputRange: ['0deg', '360deg']
-        });
-
-        const color = this.colorValue.interpolate({
-            inputRange: [0, 1],
-            outputRange: ['red', 'green']
-        });
+        const spin = this.spinValue.interpolate({ inputRange: [0, 360], outputRange: ['0deg', '360deg'] });
+        const color = this.colorValue.interpolate({ inputRange: [0, 1], outputRange: ['red', 'green'] });
 
         return (
                 <Animated.View style={{ ...styles.container, backgroundColor: color }}>
