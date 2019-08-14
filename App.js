@@ -4,6 +4,8 @@ import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
 import MyButton from './labs/CounterButton';
 import Blink from './labs/Blink';
 import PhoneBook from './labs/PhoneBook';
+import AnimationOpacity from './labs/AnimationOpacity';
+import AnimationTransform from './labs/AnimationTransform';
 import SearchResults from './labs/SearchResults';
 import {FixedDimensionsBasics, FlexDimensionsBasics} from './labs/Layout';
 import ViewAndTextExample from './labs/ViewAndText';
@@ -90,8 +92,10 @@ export default class MyApp extends React.Component {
                   keyExtractor={(item, index) => `item: ${item} index: ${index}`}
                   renderItem={({item}) => (<Text>List item: {item.name}</Text>)}
                   /> */}
-        <PhoneBook />
-        <SearchResults data={this.state.users} />
+        {/* <PhoneBook /> */}
+        <AnimationOpacity />
+        <AnimationTransform />
+        {/* <SearchResults data={this.state.users} /> */}
       </View>
     );
   }
