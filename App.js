@@ -12,6 +12,9 @@ import ViewAndTextExample from './labs/ViewAndText';
 import TextInputAndButton from './labs/TextInputAndButton';
 import ImageAndTouchable from './labs/ImageAndTouchable';
 
+import Game from './labs/tic-tac-toe/alex';
+
+
 export default class MyApp extends React.Component {
 
   state = {
@@ -96,6 +99,9 @@ export default class MyApp extends React.Component {
         <AnimationOpacity />
         <AnimationTransform />
         {/* <SearchResults data={this.state.users} /> */}
+
+        {/* <Game /> */}
+
       </View>
     );
   }

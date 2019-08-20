@@ -21,7 +21,8 @@ export default class AnimationTransform extends Component {
         Animated.timing(this.spinValue, {
             toValue: 360,
             duration: 4000,
-            easing: Easing.linear
+            easing: Easing.linear,
+            // useNativeDriver: true,
         }).start(() => this.animateSpin());
     }
 
@@ -30,7 +31,8 @@ export default class AnimationTransform extends Component {
         Animated.timing(this.colorValue, {
             toValue: 1,
             duration: 4000,
-            easing: Easing.linear
+            easing: Easing.linear,
+            // useNativeDriver: true,
         }).start(() => this.animateColor());
     }
 
@@ -38,7 +40,7 @@ export default class AnimationTransform extends Component {
         Animated.timing(this.widthValue, {
             toValue: 1,
             duration: 4000,
-            easing: Easing.linear
+            easing: Easing.linear,
         }).start(() => this.animateWidthExpand());
     }
 
@@ -46,7 +48,7 @@ export default class AnimationTransform extends Component {
         Animated.timing(this.widthValue, {
             toValue: 227,
             duration: 4000,
-            easing: Easing.linear
+            easing: Easing.linear,
         }).start(() => this.animateWidthShrink());
     }
 
