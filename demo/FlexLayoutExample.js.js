@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 export class FixedDimensionsBasics extends React.Component {
   render() {
@@ -27,3 +27,28 @@ export class FlexDimensionsBasics extends React.Component {
       );
     }
   }
+
+  export class FlexExamples extends React.Component {
+
+    renderSqure = color => <View style={{width: 50, height: 50, backgroundColor: color}} />
+
+    render() {
+      return (
+        <View style={styles.container}>
+          {this.renderSqure('powderblue')}
+          {this.renderSqure('skyblue')}
+          {this.renderSqure('steelblue')}
+        </View>
+      );
+    }
+  }
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: "space-around",
+      alignItems: "center",
+    }
+  });
+  
