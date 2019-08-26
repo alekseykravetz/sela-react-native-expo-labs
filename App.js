@@ -36,9 +36,9 @@ export default class MyApp extends React.Component {
         {/* <Demo7_AnimationTransform /> */}
 
 
-
-        {/* <MyButton /> */}
+        {/* Labs */}
         {/* <Blink text='I love to blink' /> */}
+        {/* <MyButton /> */}
         {/* <PhoneBook /> */}
 
         <TicTacToeExample />
