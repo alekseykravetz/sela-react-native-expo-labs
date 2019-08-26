@@ -39,19 +39,9 @@ export default class MyApp extends React.Component {
 
         {/* <MyButton /> */}
         {/* <Blink text='I love to blink' /> */}
-        {/* <MyButton /> */}
-        {/* <Image source={require('./assets/icon.png')} /> */}
-
-        {/* <FlatList data={this.state.users}
-                  keyExtractor={(item, index) => `item: ${item} index: ${index}`}
-                  renderItem={({item}) => (<Text>List item: {item.name}</Text>)}
-                  /> */}
-
         {/* <PhoneBook /> */}
 
-        
-
-        {/* <TicTacToeExample /> */}
+        <TicTacToeExample />
 
       </View>
     );

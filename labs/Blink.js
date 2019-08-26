@@ -4,7 +4,6 @@ import { Text } from 'react-native';
 
 export default class Blink extends React.Component {
   
-    //state object
     state = { isShowingText: true };
 
     componentDidMount(){

@@ -81,11 +81,12 @@ export default class Game extends React.Component {
                     <View>
                         {history.map((step, move) => (
                             <View key={move}>
-                                <Button
-                                    style={move === this.state.stepNumber ? styles.selectedMove : {}}
+                                <TouchableOpacity
+                                    style={[styles.historyButton, {backgroundColor: move === this.state.stepNumber ? 'green' : 'yellow'}]}
                                     onPress={() => this.jumpTo(move)}
-                                    title={move ? `Go to move #${move}` : 'Go to game start'}>
-                                </Button>
+                                    >
+                                        <Text>{move ? `Go to move #${move}` : 'Go to game start'}</Text>
+                                </TouchableOpacity>
                             </View>
                         ))}
                     </View>
@@ -95,7 +96,6 @@ export default class Game extends React.Component {
     }
 
 }
-
 
 class Board extends React.Component {
     renderSquare(i) {
@@ -132,10 +132,19 @@ class Square extends React.Component {
 }
 
 const styles = {
-    game: { padding: 20, flex: 1, flexDirection: 'column' },
-    gameInfo: { marginTop: 20 },
+    game: { 
+        paddingHorizontal: 20, 
+        flex: 1, 
+        flexDirection: 'column',
+    },
 
-    board: { padding: 20, border: '1px solid #e4e4e4' },
+    gameInfo: { marginTop: 10 },
+
+    board: { 
+        padding: 10, 
+        borderColor: 'black',
+        borderWidth: 1
+    },
 
     boarRrow: { display: 'flex', flexDirection: 'row' },
 
@@ -144,9 +153,21 @@ const styles = {
         alignItems: 'center', 
         justifyContent: 'center',
         backgroundColor: 'green',
+        margin: 2, 
+        borderColor: 'black',
+        borderWidth: 1
     },
 
-    selectedMove: { backgroundColor: 'greenyellow' },
+    historyButton: {
+        borderColor: 'white',
+        borderWidth: 1,
+        borderRadius: 12,
+        color: 'white',
+        fontSize: 24,
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        textAlign:'center',
+      },
 
 }
 
